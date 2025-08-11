@@ -1,0 +1,17 @@
+datasource db {
+provider = "mysql"
+url = env("DATABASE_URL")
+
+}
+
+model School {
+     id String @id @default(uuid())
+     name String @db.VarChar(255)
+     address String @db.VarChar(255)
+     longitude Float @db.Double
+     latitude Float @db.Double
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
